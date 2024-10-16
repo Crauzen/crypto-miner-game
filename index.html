@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mineur de Cryptomonnaies</title>
+    <!-- Lien vers Google Fonts pour les polices personnalisées -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Press+Start+2P&display=swap">
+    <!-- Inclure Chart.js pour les graphiques -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <h1 id="game-title">💰 Mineur de Cryptomonnaies 💰</h1>
+
+        <!-- Sélection de la langue et du thème -->
+        <div id="settings">
+            <div id="language-select">
+                <label for="language-dropdown">🌐 Langue :</label>
+                <select id="language-dropdown">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <div id="theme-select">
+                <label for="theme-dropdown">🎨 Thème :</label>
+                <select id="theme-dropdown">
+                    <option value="light">Jour</option>
+                    <option value="dark">Nuit</option>
+                </select>
+            </div>
+        </div>
+
+        <h2 id="stats-title">Statistiques</h2>
+        <p id="crypto-count-text">Cryptomonnaies minées : <span id="crypto-count">0</span></p>
+        <p id="crypto-per-second-text">Cryptomonnaies par seconde : <span id="crypto-per-second">0</span></p>
+        <p id="crypto-value-text">Valeur actuelle de la cryptomonnaie : $<span id="crypto-value">100</span></p>
+        <p id="prestige-points-text">Points de Prestige : <span id="prestige-points">0</span></p>
+        <p id="level-text">Niveau : <span id="level">1</span></p>
+        <p id="experience-text">XP : <span id="experience">0</span>/<span id="experience-to-next-level">100</span></p>
+        <p id="energy-text">Énergie : <span id="energy">100</span>/<span id="max-energy">100</span></p>
+
+        <h2 id="select-crypto-title">Sélectionnez une Cryptomonnaie</h2>
+        <select id="crypto-select"></select>
+
+        <button id="mine-button" class="animated-button">
+            ⛏️ <span id="mine-button-text">Miner</span>
+        </button>
+
+        <h2 id="upgrades-title">Améliorations</h2>
+        <div class="upgrades">
+            <button id="upgrade-click" class="animated-button">
+                🔨 <span id="upgrade-click-text">Améliorer Minage par Clic (Coût : 10)</span>
+            </button>
+            <button id="auto-mine" class="animated-button">
+                🤖 <span id="auto-mine-text">Acheter Mineur Automatique (Coût : 100)</span>
+            </button>
+            <button id="buy-farm" class="animated-button">
+                🏭 <span id="buy-farm-text">Acheter Ferme de Minage (Coût : 500)</span>
+            </button>
+            <button id="buy-datacenter" class="animated-button">
+                🏢 <span id="buy-datacenter-text">Acheter Centre de Données (Coût : 2000)</span>
+            </button>
+            <button id="join-pool" class="animated-button">
+                🌐 <span id="join-pool-text">Rejoindre un Pool de Minage (Coût : 5000)</span>
+            </button>
+            <button id="buy-generator" class="animated-button">
+                ⚡ <span id="buy-generator-text">Acheter Générateur (Coût : 200)</span>
+            </button>
+        </div>
+
+        <h2 id="market-title">Marché Boursier</h2>
+        <div id="market">
+            <p id="player-balance">Balance : $<span id="balance">1000</span></p>
+            <table id="market-table">
+                <tr>
+                    <th>Cryptomonnaie</th>
+                    <th>Prix Actuel ($)</th>
+                    <th>Possédé</th>
+                    <th>Acheter/Vendre</th>
+                </tr>
+                <!-- Les lignes du tableau seront générées dynamiquement -->
+            </table>
+        </div>
+
+        <h2 id="research-title">Recherche et Développement</h2>
+        <div id="research">
+            <p id="current-research">Recherche en cours : <span id="research-name">Aucune</span></p>
+            <button id="start-research-button">Commencer une Recherche</button>
+        </div>
+
+        <h2 id="quests-title">Quêtes</h2>
+        <div id="quests">
+            <p id="current-quest">Quête en cours : <span id="quest-name">Aucune</span></p>
+            <button id="accept-quest-button">Accepter une Quête</button>
+        </div>
+
+        <h2 id="daily-quest-title">Mission Quotidienne</h2>
+        <p id="daily-quest">Mission : </p>
+
+        <h2 id="achievements-title">Succès Débloqués</h2>
+        <ul id="achievements-list"></ul>
+
+        <h2 id="options-title">Options</h2>
+        <button id="prestige-button" class="animated-button">🌟 <span id="prestige-button-text">Prestige (Réinitialiser pour gagner des PP)</span></button>
+        <button id="save-game" class="animated-button">💾 <span id="save-game-text">Sauvegarder le Jeu</span></button>
+        <button id="reset-game" class="animated-button">🔄 <span id="reset-game-text">Réinitialiser le Jeu</span></button>
+
+        <h2 id="stats-graph-title">Graphique de Progression</h2>
+        <canvas id="cryptoChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Musique de fond -->
+    <audio id="background-music" src="audio/background-music.mp3" loop></audio>
+
+    <!-- Placer le script à la fin du body pour s'assurer que le DOM est chargé -->
+    <script src="script.js"></script>
+</body>
+</html>
